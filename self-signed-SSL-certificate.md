@@ -1,6 +1,10 @@
 ## Configure self-signed SSL certificate
 
-**video** https://www.youtube.com/watch?v=VH4gXcvkmOY&t=251s
+
+**Christian Lempa Tutorial**   https://www.youtube.com/watch?v=VH4gXcvkmOY&t=251s
+
+**Christian Lempa Cheatsheet** https://github.com/christianlempa/cheat-sheets
+
 
 Configuring a self-signed SSL certificate for an Apache server involves generating a certificate, configuring Apache to use it, and ensuring that your site is accessible over HTTPS. Here's a step-by-step guide to help you through the process:
 
