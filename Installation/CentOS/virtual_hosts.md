@@ -1,0 +1,135 @@
+To add virtual hosts to your Apache web server on CentOS (or Rocky Linux), you need to configure Apache to handle multiple domain names or IP addresses on a single server. Below is a detailed procedure to set up virtual hosts.
+
+### **1. Prepare the Document Root Directories**
+
+First, create separate directories to store the website files for each domain. For example, if you have two domains `example1.com` and `example2.com`, you can create the following directories:
+
+```bash
+sudo mkdir -p /var/www/example1.com/public_html
+sudo mkdir -p /var/www/example2.com/public_html
+```
+
+Set the correct permissions:
+
+```bash
+sudo chown -R $USER:$USER /var/www/example1.com/public_html
+sudo chown -R $USER:$USER /var/www/example2.com/public_html
+sudo chmod -R 755 /var/www
+```
+
+### **2. Create Test Pages**
+
+To verify that the virtual hosts are working, create simple test HTML files in each document root:
+
+```bash
+echo "<html><body><h1>Welcome to Example1.com!</h1></body></html>" | sudo tee /var/www/example1.com/public_html/index.html
+echo "<html><body><h1>Welcome to Example2.com!</h1></body></html>" | sudo tee /var/www/example2.com/public_html/index.html
+```
+
+### **3. Create Virtual Host Configuration Files**
+
+Next, create a virtual host configuration file for each domain. Apache typically looks for virtual host configurations in `/etc/httpd/conf.d/`.
+
+#### **Create Virtual Host for `example1.com`**
+
+```bash
+sudo nano /etc/httpd/conf.d/example1.com.conf
+```
+
+Add the following configuration:
+
+```apache
+<VirtualHost *:80>
+    ServerAdmin admin@example1.com
+    ServerName example1.com
+    ServerAlias www.example1.com
+    DocumentRoot /var/www/example1.com/public_html
+    ErrorLog /var/log/httpd/example1.com_error.log
+    CustomLog /var/log/httpd/example1.com_access.log combined
+
+    <Directory /var/www/example1.com/public_html>
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+
+#### **Create Virtual Host for `example2.com`**
+
+```bash
+sudo nano /etc/httpd/conf.d/example2.com.conf
+```
+
+Add the following configuration:
+
+```apache
+<VirtualHost *:80>
+    ServerAdmin admin@example2.com
+    ServerName example2.com
+    ServerAlias www.example2.com
+    DocumentRoot /var/www/example2.com/public_html
+    ErrorLog /var/log/httpd/example2.com_error.log
+    CustomLog /var/log/httpd/example2.com_access.log combined
+
+    <Directory /var/www/example2.com/public_html>
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+
+### **4. Test Apache Configuration**
+
+Before restarting Apache, test the configuration to ensure there are no syntax errors:
+
+```bash
+sudo apachectl configtest
+```
+
+If the test is successful, you should see:
+
+```
+Syntax OK
+```
+
+### **5. Restart Apache**
+
+Restart Apache to apply the changes:
+
+```bash
+sudo systemctl restart httpd
+```
+
+### **6. Update Your `/etc/hosts` File (For Local Testing)**
+
+If you're testing on a local machine without DNS, you can map the domain names to your server’s IP address in the `/etc/hosts` file:
+
+```bash
+sudo nano /etc/hosts
+```
+
+Add the following lines (replace `your_server_ip` with your server's actual IP address):
+
+```plaintext
+your_server_ip    example1.com
+your_server_ip    example2.com
+```
+
+### **7. Verify the Setup**
+
+Open your web browser and navigate to `http://example1.com` and `http://example2.com`. You should see the corresponding welcome messages for each domain.
+
+### **8. Optional: Add HTTPS Support for Virtual Hosts**
+
+If you want to secure each virtual host with HTTPS:
+
+1. **Create SSL Certificates** for each domain (you can use self-signed certificates or obtain certificates from a trusted CA like Let's Encrypt).
+
+2. **Update the Virtual Host Configuration** to include SSL directives (similar to the self-signed SSL setup mentioned earlier).
+
+3. **Enable HTTPS** by creating separate `<VirtualHost *:443>` blocks for each domain, including the SSL certificate paths.
+
+### **Summary**
+You’ve now configured Apache to handle multiple virtual hosts, allowing you to serve different websites from the same server. This setup is essential for hosting multiple domains or subdomains on a single server.
+
+Let me know if you need further help!
