@@ -77,9 +77,7 @@
 - **`[NE]`**: No escape. Prevents special characters from being escaped in the substitution URL.
 - **`[NC]`**: No case. Makes the match case-insensitive.
 
-### **5. Example**
-
-The `RewriteRule` you provided is an Apache directive that redirects all HTTP requests to their HTTPS equivalents. Here's an explanation of each part of the rule:
+### **5. Example of RewriteRule**
 
 ```apache
 RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
