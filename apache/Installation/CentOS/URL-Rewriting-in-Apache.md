@@ -39,11 +39,9 @@
   - **`substitution`**: The new URL or path to which the request will be redirected or rewritten.
   - **`[flags]`**: Optional flags that modify the behavior of the rule.
 
-### **3. Common Rewrite Rules and Use Cases**
-
 ---
 
-### **Common Rewrite Rules and Use Cases**
+### **3. Common Rewrite Rules and Use Cases**
 
 Apache's mod_rewrite module is a powerful tool for URL manipulation. Here are some common rewrite rules, along with explanations of how they work and when to use them:
 
