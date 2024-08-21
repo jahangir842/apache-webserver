@@ -1,6 +1,5 @@
 ## /etc/nginx/sites-enabled$ cat default 
-
-
+```
 # Default server configuration
 server {
 	listen 80 default_server;
@@ -108,3 +107,4 @@ server {
 
 
 }
+```
