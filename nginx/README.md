@@ -13,7 +13,7 @@ php frontend config:  /etc/nginx/sites-enabled/default
 
 
 
-Proxy:     curl https://app.tradingmachine.ai/api/
-
+Proxy:      curl https://app.tradingmachine.ai/api/
+            curl -v https://app.tradingmachine.ai/api/
 
 ```
