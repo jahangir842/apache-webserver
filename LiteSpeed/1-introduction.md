@@ -124,7 +124,7 @@ To verify that the update was successful, check the version of OpenLiteSpeed:
   apt install lsphp80 lsphp80-common lsphp80-mysql
   ```
 
-  Then, configure OpenLiteSpeed to use the newer PHP version by editing the external application settings in the WebAdmin console.
+  Then, configure OpenLiteSpeed to use the newer PHP version by editing the *external application settings* in the WebAdmin console.
 
 #### 4. **MySQL Compatibility**
 - **Problem**: If your MySQL 5.7 version is incompatible with newer OpenLiteSpeed and WordPress setups, you may experience issues like database errors or poor performance.
