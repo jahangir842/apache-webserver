@@ -6,6 +6,10 @@ https://www.youtube.com/watch?v=jhSx-vcx710
 
 https://docs.litespeedtech.com/lsws/updates/
 
+## Get started with LSPHP
+
+https://docs.litespeedtech.com/lsws/extapp/php/getting_started/
+
 
 
 
