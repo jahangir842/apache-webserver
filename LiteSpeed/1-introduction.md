@@ -2,6 +2,8 @@
 
 https://www.youtube.com/watch?v=jhSx-vcx710
 
+Server Configuration > External App
+
 ## update litespeed
 
 https://docs.litespeedtech.com/lsws/updates/
