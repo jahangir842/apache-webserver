@@ -2,5 +2,11 @@
 
 https://www.youtube.com/watch?v=jhSx-vcx710
 
+## update litespeed
+
+https://docs.litespeedtech.com/lsws/updates/
+
+
+
 
 
