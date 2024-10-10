@@ -59,7 +59,7 @@ Before updating, create backups of important files and databases to avoid any ac
 
 2. **Backup WordPress files**:
    ```bash
-   sudo tar -czf wordpress_backup.tar.gz /path/to/your/wordpress/directory
+   sudo tar -czf wordpress_backup.tar.gz /usr/local/lsws/altebby.com
    ```
 
 3. **Backup your MySQL databases**:
