@@ -117,7 +117,11 @@ To verify that the update was successful, check the version of OpenLiteSpeed:
 - **Solution**: Consider upgrading PHP. You can install newer PHP versions (e.g., PHP 7.4 or PHP 8.0) using OpenLiteSpeed’s `lsphp` packages. For example:
   
   ```bash
-  sudo apt install lsphp74 lsphp74-mysql
+  sudo apt install lsphp74 lsphp74-common lsphp74-mysql
+
+  or
+
+  apt install lsphp80 lsphp80-common lsphp80-mysql
   ```
 
   Then, configure OpenLiteSpeed to use the newer PHP version by editing the external application settings in the WebAdmin console.
