@@ -45,6 +45,56 @@ https://docs.litespeedtech.com/lsws/extapp/php/getting_started/
 
 -----
 
+### Summary of Upgrading or Downgrading OpenLiteSpeed
+
+There are three primary methods for upgrading or downgrading OpenLiteSpeed (OLS):
+
+1. **LiteSpeed Repository**: 
+   - This method provides access only to stable versions of OpenLiteSpeed. For instance, while the latest version in the edge branch may be v1.8.x, only the 1.7.x family may be available from the stable repository. To upgrade, use the command:
+     - **Upgrade**: 
+       ```bash
+       apt-get upgrade openlitespeed
+       ```
+     - **Downgrade**: 
+       You can downgrade to any specific version supported by the repository. First, check available versions:
+       ```bash
+       yum --showduplicates list openlitespeed
+       ```
+       Then run:
+       ```bash
+       yum downgrade openlitespeed-1.7.16
+       ```
+
+2. **lsup.sh Script**: 
+   - This script allows upgrading or downgrading OLS to a specific version. If you don’t have the script, download it using:
+     ```bash
+     wget https://raw.githubusercontent.com/litespeedtech/openlitespeed/master/dist/admin/misc/lsup.sh
+     ```
+   - To upgrade to the latest stable version, run:
+     ```bash
+     ./lsup.sh
+     ```
+   - You can specify other options, such as:
+     - `-d`: Choose the latest stable DEBUG version.
+     - `-v VERSION`: Install a specified version.
+     - `-e VERSION`: Upgrade/downgrade to a specific version without changing the current version.
+   - The script also serves as an installation tool for OLS.
+
+3. **Binary Install**: 
+   - If OLS was installed via a binary package, you must use the same method to upgrade. Download the desired version, extract it, and run the installation script:
+     ```bash
+     wget https://openlitespeed.org/packages/openlitespeed-1.6.7.tgz
+     tar -zxvf openlitespeed-*.tgz
+     cd openlitespeed
+     ./install.sh
+     ```
+
+### Important Notes:
+- **Consistent Method**: Always upgrade or downgrade using the same method as the initial installation to avoid complications.
+- **DirectAdmin Warning**: If using OLS with DirectAdmin, do not use the outlined methods; refer to specific guidelines for upgrading in that environment.
+- **Switching Methods**: If you need to switch installation methods, back up your configuration, uninstall OLS, restore your config, and then reinstall using your preferred method.
+
+-----
 # Live Updating Procedute
 
 To update **OpenLiteSpeed** from version **1.7.19** to the latest version on **Ubuntu 18.04**, follow these steps. I will also cover possible issues and how to resolve them.
