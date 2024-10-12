@@ -2,7 +2,7 @@
 
 ### 1. **User Interface**
 - **cPanel**: Known for its user-friendly interface, cPanel is often preferred by shared hosting users and beginners. The layout is straightforward, with icons representing different features, making navigation intuitive.
-- **Plesk**: Plesk offers a modern and customizable interface that is designed to be more flexible. It provides a sidebar for navigation, allowing users to access features quickly. Its design is often considered more modern compared to cPanel.
+- **Plesk**: Plesk is the OS-agnostic server control panel that offers one tool to install, manage, update, and secure sites and online applications. Plesk provides a modern and customizable interface designed to be more flexible. It provides a sidebar for navigation, allowing users to access features quickly. Its design is often considered more modern than that of cPanel.
 
 ### 2. **Supported Operating Systems**
 - **cPanel**: Primarily designed for **Linux-based servers** (CentOS, Red Hat, and CloudLinux).
@@ -13,7 +13,7 @@
   - Comes with a comprehensive set of features for managing websites, including file management, email management, database management (MySQL), and domain management.
   - Offers WHM (Web Host Manager) for server administration, allowing for account management and resource allocation.
 - **Plesk**:
-  - Provides a range of features including WordPress toolkit for easy WordPress management, Git integration for developers, and Docker support.
+  - Provides a range of features including a WordPress toolkit for easy WordPress management, Git integration for developers, and Docker support.
   - Plesk includes extensions for various functionalities, allowing users to customize their installations easily.
 
 ### 4. **Pricing**
