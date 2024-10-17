@@ -25,15 +25,15 @@ Install MySQL 8.0:
 
 ## Guide from other
 
-sudo apt update
-sudo apt upgrade
-upgrad: apt-get upgrade OpenLiteSpeed
-First you will need to make sure you have our latest repo file installed. This can be accomplished by running the following command:
-$ sudo wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh | sudo bash
-Copy
-Next, edit the /etc/apt/sources.list.d/lst_debian_repo.list file with your favorite text editor and remove the “#” from the second line.
-Then run $ sudo apt update.
-Finally, run $ sudo apt install --upgrade openlitespeed. This will update your OpenLiteSpeed installation to the latest Edge tier version.
+- sudo apt update
+- sudo apt upgrade
+- upgrad: apt-get upgrade OpenLiteSpeed
+- First you will need to make sure you have our latest repo file installed. This can be accomplished by running the following  command:
+- $ sudo wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh | sudo bash
+- Copy
+- Next, edit the /etc/apt/sources.list.d/lst_debian_repo.list file with your favorite text editor and remove the “#” from the second line.
+- Then run $ sudo apt update.
+- Finally, run $ sudo apt install --upgrade openlitespeed. This will update your OpenLiteSpeed installation to the latest Edge tier version.
 
 ---
 
