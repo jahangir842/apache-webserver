@@ -37,6 +37,9 @@ Install MySQL 8.0:
 
 ---
 
+## update litespeed
+
+https://docs.litespeedtech.com/lsws/updates/
 
 -----
 
