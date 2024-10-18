@@ -37,4 +37,19 @@ there will be entry of current version of PHP, now we will add a new entry here 
 
 ### Associate php with Website Itself
 
+login into litespeed webpanel,
+brows virtual hosts, click on script handler, 
+Edit the available script, if not available, then click plus (+) button to add new script, 
+fill like this:
+suffices: PHP
+Handler Type: LiteSpeed SAPI
+Handler Name: [Server Level]: lsphp80
+
+Then Save it.
+and click on Green Button to restart server Gracefully.
+
+### Verify the php Version Again:
+
+Verify the php version again to ensure it has been update successfully.
+
 
