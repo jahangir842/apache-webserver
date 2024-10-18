@@ -1,5 +1,13 @@
 ### What is a Loopback Request Error in WordPress Site Health?
 
+---
+**Reference** 
+- https://codeopolis.com/posts/wordpress-loopback-error/
+
+
+---
+
+
 A **loopback request** in WordPress is an internal mechanism where the system makes HTTP requests to itself. This is used for various tasks like:
 
 - Running **scheduled events** (e.g., cron jobs for publishing scheduled posts, backups, etc.).
