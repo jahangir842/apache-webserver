@@ -1,55 +1,60 @@
-### Change Your Website's (Wordpress) PHP Version in OpenLiteSpeed
+## Change Your Website's (WordPress) PHP Version in OpenLiteSpeed
 
-**Reference:** 
-- https://www.youtube.com/watch?v=jhSx-vcx710
-- https://docs.litespeedtech.com/lsws/extapp/php/getting_started/
+To update your PHP version in OpenLiteSpeed for a WordPress site, follow these steps:
 
-### Verify the php version in Wordpress:
+### 1. Verify the PHP Version in WordPress
 
-go to tools, sitehealth, info and in server check the current php version.
+To check the current PHP version being used in WordPress:
+- Go to **Tools** > **Site Health** > **Info**.
+- Under the **Server** section, locate the current PHP version.
 
-### Verify the php version in System:
+### 2. Verify the PHP Version on the System
 
-In system the version of php used by litespeed can be verified from: 
-
+To see which PHP version is used by LiteSpeed on your system, you can run:
+```bash
+ls /usr/local/lsws
 ```
+This will show entries like `lsphp73` or `lsphp74` that represent the installed PHP versions.
+
+### 3. Install the Latest PHP Version
+
+To install a newer version of PHP, such as PHP 8.0, run the following command:
+
+```bash
+sudo apt install lsphp80 lsphp80-common lsphp80-mysql
+```
+
+Once installed, confirm the new version is available by listing the contents again:
+```bash
 ls /usr/local/lsws
 ```
 
-it will show here like lsphp73 of lsphp74 etc.
+### 4. Configure PHP in LiteSpeed Server
 
-### Install latest php version:
-The new version can be installed like:
+- Log into your LiteSpeed Web Admin Panel.
+- Navigate to **Server Configuration** > **External App**.
+- Here, you'll see the current PHP version entry. To add a new version, copy the settings of the existing entry:
+    1. Click the **+** button.
+    2. Select **LiteSpeed SAPI App** and click **Next**.
+    3. Fill in the details by copying the old entry for the new PHP version (e.g., PHP 8.0) and saving it.
 
-```
-apt install lsphp80 lsphp80-common lsphp80-mysql
-```
-- verify that is available
+### 5. Associate the New PHP Version with Your Website
 
-```
-ls /usr/local/lsws
-```
+- In the LiteSpeed Web Admin Panel, go to **Virtual Hosts**.
+- Click on view button in your website.
+- Click on **Script Handler**.
+    - If an entry for PHP exists, edit it. Otherwise, click the **+** button to add a new script handler.
+    - Fill in the details as follows:
+        - **Suffixes**: `php`
+        - **Handler Type**: `LiteSpeed SAPI`
+        - **Handler Name**: `[Server Level]: lsphp80`
+- Save the changes and restart the server gracefully by clicking the green button.
 
-### Configure php in LiteSpeed Server
-login into litespeed webpanel,
-Go to Server Configuration > External App
-there will be entry of current version of PHP, now we will add a new entry here by copying the settings of current one with details of latest version of php which we have install now. first click on plus (+) button, select "LitespeedSAPI App" and click on next button, here fill the detail and save it.
+### 6. Verify the PHP Version Again
 
-### Associate php with Website Itself
+To ensure the PHP version has been updated successfully:
+- Go back to **Tools** > **Site Health** > **Info** in WordPress and check the PHP version under the **Server** section.
 
-login into litespeed webpanel,
-brows virtual hosts, click on script handler, 
-Edit the available script, if not available, then click plus (+) button to add new script, 
-fill like this:
-suffices: PHP
-Handler Type: LiteSpeed SAPI
-Handler Name: [Server Level]: lsphp80
+### 6. Verify Website
 
-Then Save it.
-and click on Green Button to restart server Gracefully.
-
-### Verify the php Version Again:
-
-Verify the php version again to ensure it has been update successfully.
-
-
+Verify that the website is running smoothly after the update.
