@@ -31,9 +31,10 @@ ls /usr/local/lsws
 ```
 
 ### Configure php in LiteSpeed Server
-
+login into litespeed webpanel,
 Go to Server Configuration > External App
-there will be entry of current version of PHP, by copying the settings of this create a new one with details of latest version of php which we have install now.
+there will be entry of current version of PHP, now we will add a new entry here by copying the settings of current one with details of latest version of php which we have install now. first click on plus (+) button, select "LitespeedSAPI App" and click on next button, here fill the detail and save it.
 
 ### Associate php with Website Itself
+
 
