@@ -24,12 +24,16 @@ The new version can be installed like:
 ```
 apt install lsphp80 lsphp80-common lsphp80-mysql
 ```
+- verify that is available
 
+```
+ls /usr/local/lsws
+```
 
+### Configure php in LiteSpeed Server
 
+Go to Server Configuration > External App
+there will be entry of current version of PHP, by copying the settings of this create a new one with details of latest version of php which we have install now.
 
-
-- verify that is availabe now in /usr/local/lsws/lsphp80
-- Server Configuration > External App
-
+### Associate php with Website Itself
 
